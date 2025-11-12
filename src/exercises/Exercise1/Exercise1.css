@@ -1,0 +1,24 @@
+.greeting {
+  text-align: center;
+}
+
+.greeting__heading {
+  color: var(--color-black);
+  font-size: 30px;
+}
+
+.greeting > * {
+  margin: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .greeting {
+    text-align: left;
+    display: flex;
+    grid-column: 1/ 2;
+  }
+
+  .greeting__img {
+    height: 100px;
+  }
+}

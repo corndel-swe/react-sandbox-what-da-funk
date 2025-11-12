@@ -1,0 +1,9 @@
+.discography {
+  padding: 0;
+}
+
+@media screen and (min-width: 992px) {
+  .discover {
+    grid-row: 2/3;
+  }
+}
