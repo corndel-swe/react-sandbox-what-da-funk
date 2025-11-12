@@ -8,7 +8,7 @@ This exercise focuses on moving data through multiple components (Prop Drilling)
 
 ### 1. Handling Complex Prop Objects
 
-In real-world applications, props are rarely simple strings or numbers. They are often complex JavaScript objects or arrays or a combination of both in a nested structure, such as a user profile, a list of items, or—in this case—data retrieved from an API about an artist.
+In real-world applications, props are rarely simple strings or numbers. They are often complex JavaScript objects or arrays or a combination of both in a nested structure, such as a user profile, a list of items, or in this case data retrieved from an API about an artist.
 
 When a component receives an object, you access its keys using dot notation or destructuring, just like any other JavaScript object.
 
@@ -64,33 +64,31 @@ const Exercise3 = ({ artist }) => {
 
 ## 🛠️ Challenges
 
-This exercise requires you to work on three components: the parent component that holds the data (e.g., `Home.js`), the intermediate component (`Exercise3.js`), and the child component (`ArtistTile.js`).
+This exercise requires you to work on three components: the parent component that holds the data (`Home.jsx`), the intermediate component (`Exercise3.jsx`), and the child component (`ArtistTile.jsx`).
 
-### **Part 1: The Prop Handshake (Prop Drilling)**
+### Part 1: Prop Drilling
 
-The goal is to get the `artist` data object from the main data source (the root component, assumed to be `Home.js`) down to `Exercise3.js`.
+First the goal is to get the `artist` data object from the main data source (the parent component `Home.jsx`) down to `Exercise3.jsx`.
 
-1.  **Locate Data Source:** Open the parent component of `Exercise3` (e.g., `Home.js`). Find where the `artist` data is defined (e.g., as a state variable, more on this later).
+1.  **Locate Data Source:** Open the parent component of `Exercise3` (`Home.jsx`). Find where the `artist` data is defined (as a state variable, more on this later). Feel free to log it to the console if you want to see the key-value pairs available.
 
 2.  **Pass the Prop:** Ensure this component is passing the `artist` variable to the `<Exercise3 />` component as a prop.
+    - You can remove the `null` value it currently gets.
+    - _Hint: The required change is:_ `<Exercise3 artist={artist} />`
 
-    - _The required change is similar to:_ `<Exercise3 artist={artist} />`
+### Part 2: Accessing and Passing Nested Data (`Exercise3.jsx`)
 
-### **Part 2: Accessing and Passing Nested Data (`Exercise3.js`)**
+Open the `Exercise3.jsx` file.
 
-Open the `Exercise3.js` file.
-
-1.  **Conditional Check (Review):** Note the conditional check at the top: `if (!artist) { return <Loading />; }`. This prevents crashes by showing the `<Loading />` component while the prop is `null`.
+1.  **Conditional Check (Review):** Note the conditional check at the top: `if (!artist) { return <Loading />; }`. This prevents crashes by showing the `<Loading />` component while the prop is `null`. You could try removing this later and see if the application crashes?
 
 2.  **Pass Required Props:** The `ArtistTile` component requires three specific props: `imgSrc`, `title`, and `text`. You must extract these from the received `artist` object and pass them down.
 
     - Set the `title` prop using the key **`strArtist`**.
     - Set the `text` prop using the key **`strBiographyEN`**.
 
-    <!-- end list -->
-
     ```javascript
-    // Update the Exercise3.js component's return statement:
+    // Update the Exercise3.jsx component's return statement:
     <ArtistTile
       imgSrc={artist.strArtistThumb}
       title={/* CHALLENGE: Use the artist's name key */}
@@ -98,12 +96,17 @@ Open the `Exercise3.js` file.
     />
     ```
 
-### **Part 3: Destructuring and Displaying Object Keys (`ArtistTile.js`)**
+### Part 3: Destructuring and Displaying Object Keys (`ArtistTile.jsx`)
 
-Open the `ArtistTile.js` file.
+Open the `ArtistTile.jsx` file.
 
-2.  **Use `title`:** Update the **`ArtistTile.js`** file to replace the static text "TITLE PLACEHOLDERS" with the prop **`title`**. This should be done in both the `buttonJSX` and `textJSX` sections and the `alt` attribute on the `<img/>`.
+1.  **Use `title`:** Update the **`ArtistTile.jsx`** file to replace the static text "TITLE PLACEHOLDERS" with the prop **`title`**. This should be done in both the `buttonJSX` and `textJSX` sections and the `alt` attribute on the `<img/>`.
 
-### **Completion Goal:**
+### Completion Goal:
 
 When finished, the initial loading spinner should disappear, and the application should display the `<ArtistTile />` with the correct image, title (the artist's name), and the biography text, demonstrating successful prop drilling and data access.
+
+See below for examples of the complete component.
+
+![](./assets/completed-artist-tile-button.png)
+![](./assets/completed-artist-tile-content.png)
