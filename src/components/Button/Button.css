@@ -1,0 +1,26 @@
+.button {
+  min-width: 80px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+}
+
+.primary {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+}
+
+.primary.inverted {
+  background-color: var(--color-primary);
+  border: unset;
+  color: var(--color-white);
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+}
+
+.secondary.inverted {
+ border: 2px solid var(--color-secondary);
+ background-color: transparent;
+}

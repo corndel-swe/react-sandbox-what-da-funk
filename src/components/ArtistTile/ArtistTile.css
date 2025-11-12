@@ -1,0 +1,58 @@
+.artist-tile {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(var(--color-black), 0.25);
+}
+
+.artist-tile__img {
+  width: 100%;
+}
+
+.artist-tile__content {
+  position: absolute;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.artist-tile__content > * {
+  margin: 10px 0;
+}
+
+.artist-tile__content--button {
+  bottom: 20px;
+  left: 20px;
+}
+
+.artist-tile__content--text {
+  height: 100%;
+  padding: 0px 20px;
+  top: 0;
+  overflow-y: auto;
+  background: rgba(var(--color-black), 0.8);
+  white-space: pre-line;
+}
+
+.artist-tile__cross {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.artist-tile__heading {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+/* OVERLAY */
+.artist-tile:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(var(--color-black), 0.5);
+}

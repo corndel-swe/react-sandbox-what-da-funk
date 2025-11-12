@@ -1,0 +1,21 @@
+
+:root {
+  --color-black: #1e1e2f;
+  --color-white: #f9f9f9;
+  --color-grey: #b0b8c1;
+
+  --color-primary: #4a90e2;     /* A calm blue */
+  --color-secondary: #f5a623;   /* A warm amber */
+}
+
+
+.app {
+  color: var(--color-black);
+}
+
+@media screen and (min-width: 992px) {
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

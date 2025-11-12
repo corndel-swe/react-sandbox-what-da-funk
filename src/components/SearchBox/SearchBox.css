@@ -1,0 +1,28 @@
+.search-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box__label {
+  font-size: 20px;
+}
+
+.search-box__input {
+  margin: 20px 0;
+  padding: 10px;
+  font-size: 18px;
+  border: 5px var(--color-grey) solid;
+  border-radius: 15px;
+  color: var(--color-black);
+}
+
+.search-box__input:focus {
+  border: 5px var(--color-primary) solid;
+  outline: none;
+}
+
+@media screen and (min-width: 992px) {
+  .search-box__input {
+    width: calc((100% / 3) - 50px);
+  }
+}

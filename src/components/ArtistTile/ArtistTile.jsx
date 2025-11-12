@@ -1,0 +1,45 @@
+import { useState } from "react";
+import whiteCross from "../../assets/images/white-cross.png";
+import Button from "../Button/Button";
+import "./ArtistTile.css";
+
+const ArtistTile = ({ imgSrc, title, text }) => {
+  const [showText, setShowText] = useState(false);
+
+  const handleClick = () => {
+    setShowText(!showText);
+  };
+
+  const buttonJSX = (
+    <div className="artist-tile__content artist-tile__content--button">
+      <h3 className="artist-tile__heading">TITLE</h3>
+      <div onClick={handleClick}>
+        <Button buttonText={"Find out more"} isSecondary={true} />
+      </div>
+    </div>
+  );
+
+  const textJSX = (
+    <div className="artist-tile__content artist-tile__content--text">
+      <img
+        src={whiteCross}
+        className="artist-tile__cross"
+        onClick={handleClick}
+        alt="Close text"
+      />
+      <h3 className="artist-tile__heading">TITLE</h3>
+      {text.split(".").map((sentence, index) => (
+        <p key={title + index}>{sentence + "."}</p>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="artist-tile">
+      <img src={imgSrc} className="artist-tile__img" alt="TITLE" />
+      {showText ? textJSX : buttonJSX}
+    </div>
+  );
+};
+
+export default ArtistTile;

@@ -1,0 +1,88 @@
+.album-info__banner {
+  overflow: hidden;
+  background-color: var(--color-black);
+  height: 35vh;
+  position: relative;
+}
+
+.album-info__img {
+  border-radius: 15px;
+  width: calc(100% - 100px);
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.album-info__img--first {
+  top: 50px;
+}
+
+.album-info__img--last {
+  bottom: 50px;
+}
+
+.album-info__content {
+  padding: 10px 50px;
+}
+
+.album-info__facts {
+  list-style-type: none;
+  padding: 0;
+}
+
+.album-info__heading {
+  font-size: 30px;
+  width: fit-content;
+}
+
+.album-info__heading:after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 992px) {
+  .album-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 50px 50px;
+    box-shadow: 0px 10px 20px rgba(var(--color-black), 0.25);
+    min-height: 60vh;
+  }
+
+  .album-info__banner {
+    height: 100%;
+    background-color: unset;
+  }
+
+  .album-info__img {
+    width: unset;
+    height: 100%;
+    left: unset;
+    transform: unset;
+    top: 0;
+    opacity: 0.8;
+  }
+
+  .album-info__img--first {
+    left: 0;
+  }
+
+  .album-info__img--last {
+    right: 0;
+  }
+
+  .album-info__content {
+    padding: 10px 30px;
+  }
+
+  .album-info__heading {
+    margin: 0 auto;
+  }
+}
