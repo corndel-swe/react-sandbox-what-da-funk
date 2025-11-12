@@ -4,13 +4,11 @@ import Nav from "./components/Nav/Nav";
 import Home from "./pages/Home/Home";
 import AlbumGallery from "./pages/AlbumGallery/AlbumGallery";
 import AlbumInfo from "./pages/AlbumInfo/AlbumInfo";
+import Footer from "./components/Footer/Footer";
 
-import albums from "./data/albums";
-import artist from "./data/artist";
 import { useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [user, setUser] = useState({

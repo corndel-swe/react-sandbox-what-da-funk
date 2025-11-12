@@ -745,7 +745,7 @@
     "strLabel": "Columbia",
     "strReleaseFormat": "Live",
     "intSales": "0",
-    "strAlbumThumb": "https://r2.theaudiodb.com/images/media/album/thumb/quxwwv1471389834.jpg",
+    "strAlbumThumb": null,
     "strAlbumThumbHQ": null,
     "strAlbumBack": null,
     "strAlbumCDart": "",
