@@ -1,20 +1,24 @@
 # ⚛️ React Fundamentals Refresher Project
 
-This repository is a small, opinionated React project scaffolded with Vite. It's structured as a set of practical exercises that focus on core React concepts: functional components, props, state, conditional rendering, and array methods. The app uses plain CSS (BEM conventions) and small reusable components.
+This repository is a small, React single page application scaffolded with Vite. It's structured as a set of practical exercises that focus on core React concepts: functional components, props, state, conditional rendering, and array methods. 
+
+The app uses plain CSS (BEM conventions) and small reusable components.
+
+The theme is based on Daft Punk and data/JSON is currently being mocked with static files but is originally from the [AudioDB](https://www.theaudiodb.com/free_music_api).
 
 ---
 
 ## 🚀 Getting Started
 
-This project uses Vite for a fast development experience.
+This project uses [Vite](https://vite.dev/) for a fast development experience.
 
 ### Prerequisites
 
 - Node.js (16+) and npm
 
-### 1. Clone the repository
+### 1. Fork & Clone the repository
 
-Clone the repo and change into the project folder:
+Fork the repository on Github then clone the repo and navigate into the project folder:
 
 ```bash
 git clone [YOUR_REPOSITORY_URL]
@@ -31,7 +35,7 @@ npm install
 
 ### 3. Run the development server
 
-Start the app locally:
+Open you IDE and start the app locally:
 
 ```bash
 npm run dev
@@ -45,13 +49,20 @@ Open your browser at http://localhost:5173 (Vite's default) to view the app.
 
 This repo is designed as a refresher for developers who want to practice React fundamentals via small, focused exercises. Each exercise isolates a concept so you can implement logic without worrying about build tooling or CSS.
 
-Key learning goals:
+Key learning goals so far:
 
 - Functional components and JSX
 - Props drilling and destructuring
 - Conditional rendering and loading states
 - Working with arrays: map, filter and keys
-- Minimal, reusable component patterns
+
+Key learning goals todo:
+
+- State
+- Functions as Props
+- useEffect
+- React router
+- Context
 
 ---
 
@@ -78,14 +89,14 @@ Notable files:
 - `src/exercises/Exercise4` — Exercise 4 (array methods & rendering lists)
 - `src/exercises/Exercise5` — Not ready yet
 - `src/exercises/Exercise6` — Not ready yet
-- `src/components/Loading` — small Loading spinner component used for null/loading states
-- `src/services/mockApi.js` — tiny fetch wrapper that reads `public/*.json` for local mock data
 
 ---
 
 ## 🧩 Exercises & Where to Work
 
-Each exercise has a small component in `src/exercises`. Open the matching `.jsx` and the adjacent `todo.md` (or `todo.md`-style notes) to see the exact tasks.
+Each exercise has a focused component in `src/exercises`. Open the matching `.jsx` and the adjacent `todo.md` to see some learning material and the exact task.
+
+The source repository has a `solutions` branch so if you hit a blocker on an exercise navigate to the source/upstream repo and view the code on the branch.
 
 Summary table:
 
@@ -95,23 +106,18 @@ Summary table:
 | E2       |                Props & destructuring | `src/exercises/Exercise2/Exercise2.jsx` |
 | E3       | Prop drilling, conditional rendering | `src/exercises/Exercise3/Exercise3.jsx` |
 | E4       |      Array methods (`map`, `filter`) | `src/exercises/Exercise4/Exercise4.jsx` |
-| E5       |                   Gallery (Carousel) | `src/exercises/Exercise5/Exercise5.jsx` |
-| E6       |                       Explore albums | `src/exercises/Exercise6/Exercise6.jsx` |
+| E5       |             Todo: Gallery (Carousel) | `src/exercises/Exercise5/Exercise5.jsx` |
+| E6       |                 Todo: Explore albums | `src/exercises/Exercise6/Exercise6.jsx` |
 
-If you need to change data, the mock JSON files live in `public/` (for example `public/albums.json` and `public/artist.json`). The project uses `mockApiFetch` in `src/services/mockApi.js` to read these files during development.
+If you need to change data or view the JSON that is fetched, the mock JSON files live in `public/` folder (for example `public/albums.json` and `public/artist.json`). 
 
----
-
-## 🎨 Styling
-
-- Technology: Plain CSS (no SCSS required). Many files were originally authored with SCSS-style nesting but have been converted to standard CSS using explicit BEM-style class names.
-- Convention: BEM (Block**Element--Modifier). Example: `.artist-tile**content--text`.
-- Responsibility: You generally do not need to edit CSS to complete the React exercises—focus on the React logic and use `className` values already present in the markup.
+The project uses `mockApiFetch` in `src/services/mockApi.js` to read these files during development.
 
 ---
 
 ## 🛠 Development Notes
 
+- Styling: Plain CSS using explicit BEM-style class names.
 - The app is intentionally small and uses local mock JSON for data so exercises work offline.
 - A lightweight `Loading` component exists and is used for components that receive `null`/loading props (see `src/components/Loading`).
 - There's a small `NotFound` component at `src/components/NotFound` you can use as a catch-all route.

@@ -5,8 +5,7 @@ import moon from "../../assets/images/moon.png";
 
 const Exercise1 = (props) => {
   const user = { firstName: "John", lastName: "Doe" };
-  // const currentHour = new Date().getHours();
-  const currentHour = 10;
+  const currentHour = new Date().getHours();
 
   let greetingImg;
   let greetingTime;
@@ -18,9 +17,9 @@ const Exercise1 = (props) => {
 
   return (
     <header className="greeting">
-      <img src={greetingImg} className="greeting__img" alt={greetingTime} />
+      <img src={sunrise} className="greeting__img" alt={""} />
       <h2 className="greeting__heading">
-        E1 : Good {greetingTime} <br /> {"firstName"} {"lastName"}
+        E1 : Good {"Greeting Time Here"} <br /> {"firstName"} {"lastName"}
       </h2>
     </header>
   );

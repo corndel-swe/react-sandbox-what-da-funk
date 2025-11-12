@@ -15,10 +15,16 @@ In modern React, components are typically written as **JavaScript functions**.
 
 Before the `return` statement, a component is just a standard JavaScript function. This means you can:
 
-- **Import** other functions, variables, or assets (like images) from separate files using the `import` statement.
-- Define variables, execute functions, and use standard JavaScript logic (like `if/else` statements, loops, etc.).
+- At the top of the file **import** other functions, variables, or assets (like images) from separate files using the `import` statement.
+- Within the functional component define variables, execute functions, and use standard JavaScript logic (like `if/else` statements, loops, etc.).
 
-#### **Example Import & Export Syntax:**
+#### Example Functional component and m Import & Export Syntax:
+
+The `import` and `export` statements form JavaScript's module system, enabling modular and reusable code across files.
+
+The `export` keyword makes items (functions, variables, etc.) available outside a module. You can use a single default export or multiple named exports.
+
+In another file, the `import` keyword is used to access these shared items: named exports require curly braces, while the default export is imported without them.
 
 ```javascript
 // In a Example file called 'DemoComponent.jsx'
@@ -39,7 +45,7 @@ const DemoComponent = () => {
 
   return (
     <div>
-      {/* Insert the results into JSX */}
+      {/* Insert the results into JSX using {} */}
       <img src={logo} alt="Logo" />
       <p>The area is: {area}</p>
       <p>PI is: {PI}</p>
@@ -54,9 +60,9 @@ export default DemoComponent;
 
 ### 2\. JSX
 
-JSX is a syntax extension for JavaScript, allowing you to write HTML-like structures directly within your JavaScript code. It is highly recommended because it makes the code easier to read and write.
+JSX is a syntax extension for JavaScript, allowing you to write HTML-like structures directly within your JavaScript code. It makes the code easier to read and write.
 
-#### **Inserting JavaScript into JSX**
+#### Inserting JavaScript into JSX
 
 To execute or insert a JavaScript variable, expression, or function call inside your JSX, you must wrap it in **curly braces** `{}`.
 
@@ -67,7 +73,7 @@ To execute or insert a JavaScript variable, expression, or function call inside 
 | **Object Access**   | `<p>{user.email}</p>`        | Inserts the value of the `email` property from the `user` object.          |
 | **Attribute Value** | `<img src={imageURL} />`     | Uses the JS variable `imageURL` as the value for the `src` HTML attribute. |
 
-#### **Conditional Rendering in JSX**
+#### Conditional Rendering in JSX
 
 While you can't use a full `if/else` block _inside_ the `return` statement, you can use JavaScript logic _before_ the return to determine what to render, or use **ternary operators** or **logical AND (`&&`)** inside the return.
 
@@ -92,10 +98,10 @@ In `Exercise1.jsx`, locate the `user` object.
 
 Below the line where `currentHour` is defined, you have an initial `if` block. This block only handles the 'Morning' greeting.
 
-1.  **Add `else if` Block: to handle the **Afternoon** greeting. This block should execute if the `currentHour` is **greater than or equal to 12** AND **less than 18** (i.e., 12:00 PM to 5:59 PM).
+1.  Add `else if` Block to handle the **Afternoon** greeting. This block should execute if the `currentHour` is **greater than or equal to 12 AND less than 18**.
     - Set `greetingImg` to the imported `sun` image.
     - Set `greetingTime` to the string `"Afternoon!"`.
-2.  **Add `else` Block:** to handle all other times (the **Evening** greeting).
+2.  Add `else` Block to handle all other times the **Evening** greeting.
     - Set `greetingImg` to the imported `moon` image.
     - Set `greetingTime` to the string `"Evening!"`.
 
@@ -106,7 +112,7 @@ In the component's `return` statement (the JSX structure):
 1.  **Image Source:** Ensure the `src` attribute of the `<img>` tag is dynamically set using the JavaScript variable `greetingImg`. (Hint: Use `{}`).
 2.  **Alt Text:** Ensure the `alt` attribute of the `<img>` tag is dynamically set using the JavaScript variable `greetingTime`.
 3.  **Dynamic Heading:**
-    - Ensure the `greetingTime` variable is inserted into the main heading (`<h1>`).
+    - Ensure the `greetingTime` variable is inserted into the main heading (`<h2>`).
     - Ensure the user's **first name and last name** are inserted into the main heading using **object access** (`user.firstName` and `user.lastName`).
 
 ---
@@ -122,3 +128,10 @@ See below for examples of the complete component.
 ![](./assets/completed-sunrise.png)
 ![](./assets/completed-sun.png)
 ![](./assets/completed-moon.png)
+
+---
+
+## 📝 Additional/Optional Resources
+
+- [MDN Import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [React Docs : JSX & Curly Braces](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
