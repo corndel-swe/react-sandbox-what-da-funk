@@ -83,43 +83,47 @@ const processedData = rawData
 
 ## 🛠️ Challenges
 
-This exercise requires you to update both the parent component (`Exercise4.js`) and the child component (`AlbumTiles.js`).
+This exercise requires you to update both the parent components (`Home.jsx`), (`Exercise4.jsx`) and the child component (`AlbumTiles.jsx`).
 
-### **Part 1: Prop Drilling and Data Access (Parent Component)**
+### Part 1: Prop Drilling and Data Access (Parent Component)
 
 The `albums` array needs to be passed into the `Exercise4` component to be processed.
 
-1.  **Pass the Prop:** Locate the parent component of `Exercise4` (e.g., `Home.jsx`). Find where the `albums` array is defined (likely as a state variable).
+1.  **Pass the Prop:** Locate the parent component of `Exercise4` (`Home.jsx`). Find where the `albums` array is defined (likely as a state variable).
 2.  **Define the Prop:** Ensure this component is passing the `albums` array to the `<Exercise4 />` component as a prop named **`albums`**.
 
-    - _The required change is similar to:_ `<Exercise4 albums={albums} />`
+    - _Hint: The required change is:_ `<Exercise4 albums={albums} />`
 
-### **Part 2: Generating Component Lists (`AlbumTiles.js`)**
+### Part 2: Generating Component Lists (`AlbumTiles.jsx`)
 
-Open the `AlbumTiles.js` file. This component receives an array of album objects (`albumsArr`) and maps over them to create a list of album links.
+Open the `AlbumTiles.jsx` file. This component receives an array of album objects (`albumsArr`) and maps over them to create a list of album links.
 
 1.  **Set Image Source:** Locate the `<img>` tag inside `cardListJSX`. Use JSX to dynamically set the `src` attribute of the image to the album's thumbnail using the object key **`album.strAlbumThumb`**.
 2.  **Define a Unique Key:** Locate the `<Link>` element. Ensure the `key` attribute is set to the unique album ID: **`album.idAlbum`**. (The existing key logic using `title + index` is a common but sub-optimal fallback that you should replace.)
 
-### **Part 3: Filtering Data (`Exercise4.js`)**
+### Part 3: Filtering Data (`Exercise4.jsx`)
 
-Open the `Exercise4.js` file. The initial `albums` array contains some album entries that are missing a thumbnail image, which will cause broken image icons.
+Open the `Exercise4.jsx` file. The initial `albums` array contains some album entries that are missing a thumbnail image, which will cause broken image icons.
 
-1.  **Complete the Filter:** Locate the `filteredAlbums` variable declaration. The current `filter` condition is incomplete: `albums.filter((album) => ... )`. Complete the filter to only keep albums that have a value for the thumbnail key: **`album.strAlbumThumb`**.
+1.  **Complete the Filter:** create the `filteredAlbums` variable declaration. Complete a  filter to only keep albums that have a value for the thumbnail key: **`album.strAlbumThumb`**.
 
-### **Part 3: Sorting and Slicing Data (`Exercise4.js`)**
+### Part 3: Sorting and Slicing Data (`Exercise4.jsx`)
 
 You need to use array methods to prepare two different datasets for the two components being rendered.
 
 1.  **All Albums Component:** The first `<AlbumTiles>` component (titled "Albums") currently receives all filtered albums. Update the prop `albumsArr` to use the **`.slice()`** method to pass only the **first 9** albums from the `filteredAlbums` array.
 2.  **Highest Rated Component:** The second component (titled "Highest Rated") should display the 9 albums with the highest rating.
-    - Locate the `highestRating` variable. Use the **`.sort()`** method to sort the `filteredAlbums` based on the album's score key: **`intScore`**.
+    - Create a `highestRating` variable. Use the **`.toSorted()` or `sort()`** method to sort the `filteredAlbums` based on the album's score key: **`intScore`**. If you use `sort` make sure to create a copy as it will modify your array in place meaning both components will display the same data.
     - Ensure the sort returns the **highest scores first** (descending order).
     - Pass the sorted array to the `albumsArr` prop, using **`.slice()`** to limit the result to the **first 9** albums.
 
-### **Completion Goal:**
+### Completion Goal:
 
 When finished, you should see two sections:
 
 1.  **Albums:** Displays the first 9 available albums (only those with an image).
 2.  **Highest Rated:** Displays the 9 highest-rated albums (sorted by `intScore`).
+
+See below for an example of the complete component.
+
+![](./assets/completed-albums-highest-rated.png)
