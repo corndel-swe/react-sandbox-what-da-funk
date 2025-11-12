@@ -34,6 +34,8 @@ const props = {
 };
 ```
 
+Do you notice how the key-value pairs on the component relate to the props object?
+
 ---
 
 ### 2\. Destructuring Props
@@ -58,23 +60,25 @@ const Button = ({ text, color, isDisabled }) => {
 
 In standard HTML, you use the `class` attribute to assign CSS styles. However, because React/JSX uses JavaScript, the word `class` is a reserved keyword.
 
-Therefore, within JSX, you must use **`className`** instead of `class` to assign CSS classes. In your challenge, you're using a common pattern of building an array of class strings and joining them: `buttonStyles.join(" ")`.
+Therefore, within JSX, you must use **`className`** instead of `class` to assign CSS classes. 
+
+In your challenge, you're using a common pattern of building an array of class strings and joining them: `buttonStyles.join(" ")`.
 
 ---
 
 ## 🛠️ Challenges
 
-This exercise requires you to work on **two files**: `Exercise2.js` (the parent) and `Button.js` (the child component).
+This exercise requires you to work on **two files**: `Exercise2.jsx` (the parent) and `Button.jsx` (the child component).
 
 Note: All necessary styles have been handled in the project; you just need to use the correct class names to apply them. If you are curious, you can find the styles in the corresponding CSS file within each component's folder.
 
-### **Part 1: Defining Props in the Child Component (`Button.js`)**
+### Part 1: Defining Props in the Child Component (`src/components/Button/Button.jsx`)
 
-Open the `Button.js` file and complete the implementation:
+Open the `Button.jsx` file and complete the implementation:
 
-1.  **Destructure All Props:** Update the `Button` component definition to destructure all four props it will receive: `buttonText`, `isSecondary`, `isInverted`, and `inCaps`.
+1.  Destructure All Props: Update the `Button` component definition to destructure all four props it already has one but it will eventually receive: `buttonText`, `isInverted`, and `inCaps`.
 
-2.  **Handle Secondary State:** The logic for adding the `primary` class if `isSecondary` is not true is already set. Add the class `secondary` to the styles array inside the `else` block to complete the logic for the secondary state.
+2.  Handle Secondary State: The logic for adding the `primary` class if `isSecondary` is not true is already set. Add the class `secondary` to the styles array inside the `else` block to complete the logic for the secondary state.
 
     ```javascript
     // Update the else block here
@@ -89,13 +93,17 @@ Open the `Button.js` file and complete the implementation:
 
 5.  **Handle Capitalization:** Before the `return` statement, define a variable for the displayed text. Use an `if/else` block and the `inCaps` prop to conditionally convert the `buttonText` to **uppercase** using `.toUpperCase()`.
 
-### **Part 2: Passing Props in the Parent Component (`Exercise2.js`)**
+### Part 2: Passing Props in the Parent Component (`Exercise2.jsx`)
 
-Open the `Exercise2.js` file. Using the comments above each `<Button />` tag as a guide, pass the necessary `buttonText` (string) and boolean props (`isSecondary`, `isInverted`, `inCaps`) to each component.
+Open the `Exercise2.jsx` file. Using the comments above each `<Button />` tag as a guide, pass the necessary `buttonText` (string) and boolean props (`isSecondary`, `isInverted`, `inCaps`) to each component.
 
 - Remember to wrap string values in curly braces _and_ quotation marks (e.g., `{"Text"}`).
 - Remember to wrap boolean values in curly braces (e.g., `{true}`).
 
-### **Completion Goal:**
+### Completion Goal:
 
-When finished, the application should display five distinct buttons, each styled and labeled according to the props passed from `Exercise2.js`.
+When finished, the application should display five distinct buttons, each styled and labeled according to the props passed from `Exercise2.jsx`.
+
+See below for an example of the complete component.
+
+![](./assets/completed-buttons.png)
