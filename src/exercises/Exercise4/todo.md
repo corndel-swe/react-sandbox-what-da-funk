@@ -20,12 +20,15 @@ Crucially, if you are iterating over an array of JavaScript objects (like the al
 
 This allows you to perform conditional checks (item.strAlbumThumb), sorting comparisons (a.intScore - b.intScore), and data extraction.
 
-| Method         | Purpose                                                                                                                                   | Returns                              |
-| :------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
-| **`map()`**    | Executes a callback for every element and returns a **new array** containing the results of the callback.                                 | A new Array                          |
-| **`filter()`** | Executes a callback (which must return a boolean) and returns a **new array** containing only the elements that passed the test (`true`). | A new Array                          |
-| **`sort()`**   | Sorts the elements of an array in place based on the return value of a comparator function.                                               | The sorted Array (modifies original) |
-| **`slice()`**  | Returns a shallow copy of a portion of an array into a **new array**.                                                                     | A new Array                          |
+Here is the updated table with the **`toSorted()`** method included:
+
+| Method           | Purpose                                                                                                                                   | Returns                              |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| **`map()`**      | Executes a callback for every element and returns a **new array** containing the results of the callback.                                 | A new Array                          |
+| **`filter()`**   | Executes a callback (which must return a boolean) and returns a **new array** containing only the elements that passed the test (`true`). | A new Array                          |
+| **`sort()`**     | Sorts the elements of an array in place based on the return value of a comparator function.                                               | The sorted Array (modifies original) |
+| **`toSorted()`** | Returns a **new, sorted array** based on the return value of a comparator function, leaving the original array unchanged.                 | A new Array                          |
+| **`slice()`**    | Returns a shallow copy of a portion of an array into a **new array**.                                                                     | A new Array                          |
 
 ### 2\. Rendering Lists with `map()` and the `key` Prop
 
@@ -71,7 +74,7 @@ When rendering a list of elements, **React requires every component or element w
 Since array methods like `filter()`, `slice()`, and `map()` all return new arrays, you can easily **chain them together** for sequential operations. This is extremely common in React for preparing data for display.
 
 ```javascript
-// Example: Filter out invalid entries, then sort them, then show only the top 5
+// Example: Filter out invalid entries, then sort them, then show only the top 5 by creating a component
 const processedData = rawData
   .filter((item) => item.isValid)
   .toSorted((a, b) => b.score - a.score)
@@ -105,13 +108,13 @@ Open the `AlbumTiles.jsx` file. This component receives an array of album object
 
 Open the `Exercise4.jsx` file. The initial `albums` array contains some album entries that are missing a thumbnail image, which will cause broken image icons.
 
-1.  **Complete the Filter:** create the `filteredAlbums` variable declaration. Complete a  filter to only keep albums that have a value for the thumbnail key: **`album.strAlbumThumb`**.
+1.  **Complete the Filter:** create a `filteredAlbums` variable declaration. Complete a filter to only keep albums that have a value (not `null`) for the thumbnail key: **`album.strAlbumThumb`**.
 
 ### Part 3: Sorting and Slicing Data (`Exercise4.jsx`)
 
 You need to use array methods to prepare two different datasets for the two components being rendered.
 
-1.  **All Albums Component:** The first `<AlbumTiles>` component (titled "Albums") currently receives all filtered albums. Update the prop `albumsArr` to use the **`.slice()`** method to pass only the **first 9** albums from the `filteredAlbums` array.
+1.  **All Albums Component:** The first `<AlbumTiles>` component (titled "Albums") currently receives all filtered albums. Update the prop `albumsArr` to use the `filteredAlbums` and also use a **`.slice()`** method to pass only the **first 9** albums from the array.
 2.  **Highest Rated Component:** The second component (titled "Highest Rated") should display the 9 albums with the highest rating.
     - Create a `highestRating` variable. Use the **`.toSorted()` or `sort()`** method to sort the `filteredAlbums` based on the album's score key: **`intScore`**. If you use `sort` make sure to create a copy as it will modify your array in place meaning both components will display the same data.
     - Ensure the sort returns the **highest scores first** (descending order).
@@ -127,3 +130,11 @@ When finished, you should see two sections:
 See below for an example of the complete component.
 
 ![](./assets/completed-albums-highest-rated.png)
+
+---
+
+## 📝 Additional/Optional Resources
+
+- [React Docs : Rendering Lists](https://react.dev/learn/rendering-lists)
+- [MDN .filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [MDN .map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
