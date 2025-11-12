@@ -4,7 +4,7 @@ import sun from "../../assets/images/sun.png";
 import moon from "../../assets/images/moon.png";
 
 const Exercise1 = (props) => {
-  const user = { firstName: "John", lastName: "Doe" };
+  const user = { firstName: "Charlie", lastName: "Richardson" };
   const currentHour = new Date().getHours();
 
   let greetingImg;
@@ -13,13 +13,19 @@ const Exercise1 = (props) => {
   if (currentHour < 12) {
     greetingImg = sunrise;
     greetingTime = "Morning!";
+  } else if (currentHour < 18) {
+    greetingImg = sun;
+    greetingTime = "Afternoon!";
+  } else {
+    greetingImg = moon;
+    greetingTime = "Evening!";
   }
 
   return (
     <header className="greeting">
-      <img src={sunrise} className="greeting__img" alt={""} />
+      <img src={greetingImg} className="greeting__img" alt={greetingTime} />
       <h2 className="greeting__heading">
-        E1 : Good {"Greeting Time Here"} <br /> {"firstName"} {"lastName"}
+        E1 : Good {greetingTime} <br /> {user.firstName} {user.lastName}
       </h2>
     </header>
   );

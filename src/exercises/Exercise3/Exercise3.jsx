@@ -16,7 +16,11 @@ const Exercise3 = ({ artist }) => {
   return (
     <section className="discover">
       <h2>E3 : Discover</h2>
-      <ArtistTile imgSrc={artist.strArtistThumb} title={""} text={""} />
+      <ArtistTile
+        imgSrc={artist.strArtistThumb}
+        title={artist.strArtist}
+        text={artist.strBiographyEN}
+      />
     </section>
   );
 };

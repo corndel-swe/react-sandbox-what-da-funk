@@ -43,9 +43,9 @@ const Home = (props) => {
 
         <Exercise2 />
 
-        <Exercise3 artist={null} />
+        <Exercise3 artist={artist} />
 
-        <Exercise4 albums={[]} />
+        <Exercise4 albums={albums} />
 
         <Exercise5 imagesArr={[]} />
 
