@@ -36,9 +36,10 @@ While often undesirable (and sometimes solved later using the Context API), it i
 
 **Example of Prop Drilling:**
 
-- `Home` component has `artist`.
+- `Home` component has `artist` (data about an artist).
 - `Home` passes `artist` to `Exercise3`.
-- `Exercise3` needs to pass `artist` down to `ArtistTile`.
+- `Exercise3` needs to pass `artist` properties down to `ArtistTile`.
+- `ArtistTile` displays the given props as the UI.
 
 In this scenario, `Exercise3` receives `artist` just to forward it to `ArtistTile`.
 
@@ -80,7 +81,7 @@ First the goal is to get the `artist` data object from the main data source (the
 
 Open the `Exercise3.jsx` file.
 
-1.  **Conditional Check (Review):** Note the conditional check at the top: `if (!artist) { return <Loading />; }`. This prevents crashes by showing the `<Loading />` component while the prop is `null`. You could try removing this later and see if the application crashes?
+1.  **Conditional Check (Review):** Note the conditional check at the top: `if (!artist) { return <Loading />; }`. This prevents crashes by showing the `<Loading />` component while the prop is `null`. You could try removing this later and see if the application crashes on refresh?
 
 2.  **Pass Required Props:** The `ArtistTile` component requires three specific props: `imgSrc`, `title`, and `text`. You must extract these from the received `artist` object and pass them down.
 
@@ -100,7 +101,7 @@ Open the `Exercise3.jsx` file.
 
 Open the `ArtistTile.jsx` file.
 
-1.  **Use `title`:** Update the **`ArtistTile.jsx`** file to replace the static text "TITLE PLACEHOLDERS" with the prop **`title`**. This should be done in both the `buttonJSX` and `textJSX` sections and the `alt` attribute on the `<img/>`.
+1. Update the **`ArtistTile.jsx`** file to replace the static text "TITLE" placeholders with the prop **`title`**. This should be done in both the `buttonJSX` and `textJSX` sections and the `alt` attribute on the `<img/>`.
 
 ### Completion Goal:
 
@@ -110,3 +111,9 @@ See below for examples of the complete component.
 
 ![](./assets/completed-artist-tile-button.png)
 ![](./assets/completed-artist-tile-content.png)
+
+---
+
+## 📝 Additional/Optional Resources
+
+- [React Docs : Conditional Rendering](https://react.dev/learn/conditional-rendering)
