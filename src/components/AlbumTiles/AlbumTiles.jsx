@@ -4,10 +4,9 @@ import "./AlbumTiles.css";
 const AlbumTiles = ( { title, albumsArr }) => {
 
   const cardListJSX = albumsArr.map((album, index) => (
-    <Link to={`/album/${album.idAlbum}`} key={title + (index + 1)}>
+    <Link to={`/album/${album.idAlbum}`} >
       <img
         className="album-tiles__img"
-        // src={album.strAlbumThumb}
         alt={album.strAlbum}
       />
     </Link>
