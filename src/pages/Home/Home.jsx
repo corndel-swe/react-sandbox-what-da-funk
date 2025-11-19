@@ -47,7 +47,7 @@ const Home = (props) => {
 
         <Exercise4 albums={albums} />
 
-        <Exercise5 imagesArr={[]} />
+        <Exercise5 imagesArr={galleryImages} />
 
         <Exercise6 albumsArr={[]} />
       </div>
