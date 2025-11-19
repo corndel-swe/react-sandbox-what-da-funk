@@ -1,41 +1,21 @@
-import { useState } from "react";
 import leftArrow from "../../assets/images/left-arrow.png";
 import rightArrow from "../../assets/images/right-arrow.png";
 import "./Carousel.css";
 
-const Carousel = (props) => {
-  const { imagesArr } = props;
-  const [counter, setCounter] = useState(0);
-
-  const handleIncrement = () => {
-    // if (counter === imagesArr.length - 1) {
-    //   setCounter(0);
-    // } else {
-    //   setCounter(counter + 1);
-    // }
-  };
-
-  const handleDecrement = () => {
-    // if (counter === 0) {
-    //   setCounter(imagesArr.length - 1);
-    // } else {
-    //   setCounter(counter - 1);
-    // }
-  };
-
+const Carousel = ({ imagesArr }) => {
   return (
     <div className="carousel">
       <img
         src={leftArrow}
         alt="left arrow"
-        onClick={handleDecrement}
+        onClick={undefined}
         className="carousel__arrow carousel__arrow--left"
       />
-      <img src={imagesArr[counter]} alt="" className="carousel__image" />
+      <img src={imagesArr[0]} alt="" className="carousel__image" />
       <img
         src={rightArrow}
         alt="right arrow"
-        onClick={handleIncrement}
+        onClick={undefined}
         className="carousel__arrow carousel__arrow--right"
       />
     </div>

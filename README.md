@@ -1,6 +1,6 @@
 # ⚛️ React Fundamentals Refresher Project
 
-This repository is a small, React single page application scaffolded with Vite. It's structured as a set of practical exercises that focus on core React concepts: functional components, props, state, conditional rendering, and array methods. 
+This repository is a small, React single page application scaffolded with Vite. It's structured as a set of practical exercises that focus on core React concepts: functional components, props, state, conditional rendering, and array methods.
 
 The app uses plain CSS (BEM conventions) and small reusable components.
 
@@ -87,7 +87,7 @@ Notable files:
 - `src/exercises/Exercise2` — Exercise 2 (props & destructuring)
 - `src/exercises/Exercise3` — Exercise 3 (prop drilling & conditional rendering)
 - `src/exercises/Exercise4` — Exercise 4 (array methods & rendering lists)
-- `src/exercises/Exercise5` — Not ready yet
+- `src/exercises/Exercise5` — Exercise 5 (event handlers & state)
 - `src/exercises/Exercise6` — Not ready yet
 
 ---
@@ -100,16 +100,16 @@ The source repository has a `solutions` branch so if you hit a blocker on an exe
 
 Summary table:
 
-| Exercise |                                Topic | Main file to edit                       |
-| -------- | -----------------------------------: | :-------------------------------------- |
-| E1       |           Functional components, JSX | `src/exercises/Exercise1/Exercise1.jsx` |
-| E2       |                Props & destructuring | `src/exercises/Exercise2/Exercise2.jsx` |
-| E3       | Prop drilling, conditional rendering | `src/exercises/Exercise3/Exercise3.jsx` |
-| E4       |      Array methods (`map`, `filter`) | `src/exercises/Exercise4/Exercise4.jsx` |
-| E5       |             Todo: Gallery (Carousel) | `src/exercises/Exercise5/Exercise5.jsx` |
-| E6       |                 Todo: Explore albums | `src/exercises/Exercise6/Exercise6.jsx` |
+| Exercise |                                     Topic | Main file to edit                       |
+| -------- | ----------------------------------------: | :-------------------------------------- |
+| E1       |                Functional components, JSX | `src/exercises/Exercise1/Exercise1.jsx` |
+| E2       |                     Props & destructuring | `src/exercises/Exercise2/Exercise2.jsx` |
+| E3       |      Prop drilling, conditional rendering | `src/exercises/Exercise3/Exercise3.jsx` |
+| E4       |           Array methods (`map`, `filter`) | `src/exercises/Exercise4/Exercise4.jsx` |
+| E5       | Gallery (Carousel) Event Handlers & State | `src/exercises/Exercise5/Exercise5.jsx` |
+| E6       |                      Todo: Explore albums | `src/exercises/Exercise6/Exercise6.jsx` |
 
-If you need to change data or view the JSON that is fetched, the mock JSON files live in `public/` folder (for example `public/albums.json` and `public/artist.json`). 
+If you need to change data or view the JSON that is fetched, the mock JSON files live in `public/` folder (for example `public/albums.json` and `public/artist.json`).
 
 The project uses `mockApiFetch` in `src/services/mockApi.js` to read these files during development.
 
