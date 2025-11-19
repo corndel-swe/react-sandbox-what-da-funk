@@ -1,5 +1,8 @@
 import "./Home.css";
 
+import AlbumTiles from "../../components/AlbumTiles/AlbumTiles";
+import Carousel from "../../components/Carousel/Carousel";
+import ExploreAlbums from "../../components/ExploreAlbums/ExploreAlbums";
 import Exercise1 from "../../exercises/Exercise1/Exercise1";
 import Exercise2 from "../../exercises/Exercise2/Exercise2";
 import Exercise3 from "../../exercises/Exercise3/Exercise3";
